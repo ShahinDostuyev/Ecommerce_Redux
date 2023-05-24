@@ -5,8 +5,6 @@ function BasketReducer(state, action) {
   if (state == undefined) return [];
   if (action.type === "SET_BASKET") {
     return [...state, action.payload];
-  } else if (action.type == "IS_IN_BASKET") {
-    return state.some((item) => item.id == action.payload.id);
   } else if (action.type === "ADD_REMOVE_PRODUCT") {
     const product = action.payload;
     const isInBasket = state.some((item) => item.id === product.id);

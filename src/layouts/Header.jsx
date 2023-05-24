@@ -8,11 +8,12 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { BasketContext } from "../contexts/BasketContext";
 import { SignContext } from "../contexts/SignContext";
+import { useSelector } from "react-redux";
 
 function ResponsiveAppBar() {
-  const { basket } = React.useContext(BasketContext);
+  // const { basket } = React.useContext(BasketContext);
   const { setloggedIn, loggedIn } = React.useContext(SignContext);
-
+  let basket = useSelector(state=>state)
   return (
     <AppBar
       position="static"

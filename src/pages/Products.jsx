@@ -27,7 +27,9 @@ function Products() {
   });
   console.log(data);
 
-  
+  const isInBasket = (product) =>{
+    return basket.some(item => item.id == product.id)
+  }
 
   return (
     <Box
@@ -81,7 +83,7 @@ function Products() {
                 </Typography>
               </CardContent>
             </CardActionArea>
-            {dispatch({type:"IS_IN_BASKET",payload:product}) ? (
+            {isInBasket(product) ? (
               <CardActions sx={{ position: "absolute", bottom: 2, right: 2 }}>
                 <Button
                   size="small"
