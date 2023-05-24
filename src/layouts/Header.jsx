@@ -11,7 +11,6 @@ import { SignContext } from "../contexts/SignContext";
 import { useSelector } from "react-redux";
 
 function ResponsiveAppBar() {
-  // const { basket } = React.useContext(BasketContext);
   const { setloggedIn, loggedIn } = React.useContext(SignContext);
   let basket = useSelector(state=>state)
   return (

@@ -19,13 +19,11 @@ import { useDispatch, useSelector } from "react-redux";
 function Products() {
   const dispatch = useDispatch()
   let basket = useSelector(state=>state)
-  // const { isInBasket, handleAddRemove } = useContext(BasketContext);
 
 
   const { error, isLoading, data } = useQuery(["Products"], () => {
     return axios.get("https://fakestoreapi.com/products");
   });
-  console.log(data);
 
   const isInBasket = (product) =>{
     return basket.some(item => item.id == product.id)
